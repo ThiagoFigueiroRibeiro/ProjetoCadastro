@@ -25,7 +25,9 @@ Note que você deve fazer isso somente depois de instalar o Python, caso contrá
 
 "Encontrei o erro *'OperationalError at /usuarios/ no such table: app_cad_usuarios_usuario'*. O que eu faço?" - Você deve ter deletado a base de dados e não a reviveu. Rode o arquivo "revive_database.bat" que deve solucionar o problema. 
 
-"Encontrei o erro IntegrityError at /usuarios/ NOT NULL constraint failed: app_cad_usuarios_usuario.nome. O que eu faço?" - Não existe usuário algum na sua base de dados e você tentou acessar o http://127.0.0.1:8000/usuarios/ mesmo assim, né? Esse problema irá desaparecer assim que você cadastrar a primeira pessoa. 
+"Encontrei o erro *IntegrityError at /usuarios/ NOT NULL constraint failed: app_cad_usuarios_usuario.nome*. O que eu faço?" - Não existe usuário algum na sua base de dados e você tentou acessar o http://127.0.0.1:8000/usuarios/ mesmo assim, né? Esse problema irá desaparecer assim que você cadastrar a primeira pessoa. 
+
+"Encontrei o erro *ValueError at /usuarios/ Field 'idade' expected a number but got ''*. O que eu faço?" - Você tentou avançar a tela mesmo sem preencher um campo. Preencha TODOS os campos do formulário. 
 
 # Changelog:
 
