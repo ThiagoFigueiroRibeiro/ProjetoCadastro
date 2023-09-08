@@ -31,4 +31,6 @@ Note que você deve fazer isso somente depois de instalar o Python, caso contrá
 
 # Changelog:
 
+08/09/2023 - Versão alpha 0002 publicada. Foi editado um footer pra o site e correção do espaçamento das informações de cadastro na página principal.
+
 06/09/2023 - Versão alpha 0001 publicada. É uma cópia do trabalho do Jhonatan de Souza, com alguns arquivos meus pra melhorar a quality of life dos usuários (run.bat e o revive_database.bat). É a versão base para o início do nosso trabalho de extensão.
