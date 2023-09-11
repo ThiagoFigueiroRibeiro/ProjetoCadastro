@@ -6,14 +6,18 @@
     <table class="table table-bordered table-striped">
         <tr>
             <th>id</th>
-            <th>nome</th>
-            <th>idade</th>
+            <th>Nome</th>
+            <th>Idade (anos)</th>
+			<th>Peso (kg)</th>
+			<th>Altura (cm)</th>
         </tr>
         {% for usuario in usuarios %}
         <tr>
             <td>{{usuario.id_usuario}}</td>
             <td>{{usuario.nome}}</td>
             <td>{{usuario.idade}}</td>
+			<td>{{usuario.peso}}</td>
+			<td>{{usuario.altura}}</td>
         </tr>
         {% endfor %}
     </table>
