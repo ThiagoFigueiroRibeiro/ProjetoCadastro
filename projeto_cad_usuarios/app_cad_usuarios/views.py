@@ -2,16 +2,37 @@ from django.shortcuts import render
 from .models import Usuario
 
 def home(request):
+    # Criação da página principal do site.
     return render(request,'usuarios/home.html')
 
 def exibir(request):
-    #Exibir todos os usuarios já cadastrados em uma nova página
+    # Exibe todos os usuarios já cadastrados em uma nova página
     usuarios = {
         'usuarios': Usuario.objects.all()
     }
 
-    # Retornar os dados para a página de listagem dos usuários
+    # Retorna os dados para a página de listagem dos usuários
     return render(request,'usuarios/exibir.html', usuarios)
+
+def pesquisa(request):
+    # Exibe um usuario específico cadastrado.
+    id_user = request.POST.get('id_usuario_request')
+    usuarios = {
+        'usuarios_filter': Usuario.objects.filter(id_usuario = id_user)
+    }
+
+    return render(request,'usuarios/pesquisa.html', usuarios)
+
+def resultado_pesquisa(request):
+    # Exibe um usuario específico cadastrado.
+    id_user = request.POST.get('id_usuario_request')
+    usuarios = {
+        'usuarios_filter': Usuario.objects.filter(id_usuario = id_user)
+    }
+
+    # Exibe o resultado da pesquisa do usuário
+    return render(request,'usuarios/resultado_pesquisa.html', usuarios)
+
 
 def usuarios(request):
     #Salvar os dados da tela para o banco de dados
