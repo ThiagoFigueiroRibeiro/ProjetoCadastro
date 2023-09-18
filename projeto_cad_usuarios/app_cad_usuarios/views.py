@@ -33,6 +33,16 @@ def resultado_pesquisa(request):
     # Exibe o resultado da pesquisa do usuário
     return render(request,'usuarios/resultado_pesquisa.html', usuarios)
 
+def deletar_usuario(request):
+    # Deleta um usuario específico da base de dados.
+    id_user = request.POST.get('id_usuario_request')
+    usuarios = {
+        'usuarios_filter': Usuario.objects.filter(id_usuario = id_user).delete()
+    }
+
+    # Exibe o resultado da pesquisa do usuário
+    return render(request,'usuarios/deletar_usuario.html', usuarios)
+
 
 def usuarios(request):
     #Salvar os dados da tela para o banco de dados
