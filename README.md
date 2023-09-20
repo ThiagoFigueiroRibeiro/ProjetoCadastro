@@ -25,6 +25,10 @@ Note que você deve fazer isso somente depois de instalar o Python, caso contrá
 
 # Changelog:
 
+19/09/2023 - Versão Alpha 0004 publicada. Foi instalado o tema SB Admin, um dashboard padrão do bootstrap. Foi incluído uma página de gráficos que mostra a quantidade de usuários por especialidade. Correção de alguns erros. 
+
+18/09/2023 - Criação de uma página /deletar_usuario/ que você pode deletar um usuário com determinada id da base SQL.
+
 17/09/2023 - Versão alpha 0003 publicada - Agora existe uma página /exibir/ que exibe todos os usuários cadastrados sem a necessidade de adicionar um novo. Existe também uma página /pesquisa/ que você busca um determinado usuário com id_usuario tal e ela exibe os dados somente desse usuário. 
 
 08/09/2023 - Versão alpha 0002 publicada. Foi editado um footer pra o site e correção do espaçamento das informações de cadastro na página principal.

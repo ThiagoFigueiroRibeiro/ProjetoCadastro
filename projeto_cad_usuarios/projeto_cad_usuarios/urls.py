@@ -17,4 +17,15 @@ urlpatterns = [
 
     # usuarios.com/resultado_pesquisa - Exibe uma lista com os dados de um determinado usuário.
     path('resultado_pesquisa/',views.resultado_pesquisa,name='resultado_pesquisa'),
+
+    # usuarios.com/deletar_usuario - Página que você solicita a exclusão de um usuário.
+    path('deletar_usuario/',views.deletar_usuario,name='deletar_usuario'),
+
+    # usuarios.com/incluir_especialidade - Para incluir a especialidade a um usuário.
+    path('incluir_especialidade/',views.incluir_especialidade,name='incluir_especialidade'),
+
+    # usuarios.com/incluir_especialidade - Para incluir a especialidade a um usuário.
+    path('graph/',views.graph,name='graph'),
+    
+    
 ]
