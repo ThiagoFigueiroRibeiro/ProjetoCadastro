@@ -49,7 +49,7 @@
   --bs-warning-rgb: 255, 193, 7;
   --bs-danger-rgb: 220, 53, 69;
   --bs-light-rgb: 248, 249, 250;
-  --bs-dark-rgb: 33, 37, 41;
+  --bs-dark-rgb: 11, 24, 47;  /* Altera a cor do top navbar - Thiago*/
   --bs-white-rgb: 255, 255, 255;
   --bs-black-rgb: 0, 0, 0;
   --bs-body-color-rgb: 33, 37, 41;
@@ -11019,20 +11019,20 @@ body {
 }
 
 .sb-sidenav-dark {
-  background-color: #212529;
-  color: rgba(255, 255, 255, 0.5);
+background-color: #16305E;   /* Muda cor da navbar lateral - Thiago*/
+  color: rgba(255, 255, 255, 0.75);
 }
 .sb-sidenav-dark .sb-sidenav-menu .sb-sidenav-menu-heading {
   color: rgba(255, 255, 255, 0.25);
 }
-.sb-sidenav-dark .sb-sidenav-menu .nav-link {
-  color: rgba(255, 255, 255, 0.5);
+.sb-sidenav-dark .sb-sidenav-menu .nav-link { /* Muda cor das letras da navbar lateral - Thiago */
+  color: rgba(255, 255, 255, 0.75);
 }
 .sb-sidenav-dark .sb-sidenav-menu .nav-link .sb-nav-link-icon {
-  color: rgba(255, 255, 255, 0.25);
+  color: rgba(255, 255, 255, 0.75);
 }
 .sb-sidenav-dark .sb-sidenav-menu .nav-link .sb-sidenav-collapse-arrow {
-  color: rgba(255, 255, 255, 0.25);
+  color: rgba(255, 255, 255, 0.5);
 }
 .sb-sidenav-dark .sb-sidenav-menu .nav-link:hover {
   color: #fff;
@@ -11049,7 +11049,7 @@ body {
 
 .sb-sidenav-light {
   background-color: #f8f9fa;
-  color: #212529;
+  color: #211529;
 }
 .sb-sidenav-light .sb-sidenav-menu .sb-sidenav-menu-heading {
   color: #adb5bd;
