@@ -7,51 +7,45 @@
   {% csrf_token %}
   <div style="text-align: center;" class="container">
     <h1>Cadastro de Usuário</h1>
-    
-	<div class="container p-4">
-		Nome <input name="nome" class="form-control" type ="text" placeholder="Nome completo" required>
-	</div>
+	<div class="container">
+		Nome<br><input name="nome" class="form-control" type ="text" placeholder="Nome completo" required>
+	</div><br>
 	
-	<div class="container p-4">
-		<div class="row align-items-start">
+	<div class="container">
+		<div class="row">
+		  <div class="col">
 			<div class="col">
-			  Idade (anos) <input name="idade" class="form-control-sm" type="number" placeholder="Em anos" required min = "1" max="1000">
-			</div>
-			
+				Idade (anos)<br> <input name="idade" class="form-control-sm" type="number" placeholder="Em anos" required min = "1" max="1000">
+			</div><br>
 			<div class="col">
-			  CEP <input name="cep" class="form-control-sm" type="number" placeholder="" required min = "00000001" max="99999999">
-			</div>
-			
-			<div class="col">
-			  Bairro <input name="bairro" class="form-control-sm" type="text" placeholder="" required>
-			</div>
-		</div>
-	</div>
-	
-		
-	<div class="row align-items-start">
-		<div class="col">
-		  Número da casa <input name="n_casa" class="form-control-sm" type="number" placeholder="" required>
-		</div>
-		
-		<div class="col">
-		  Telefone <input name="telefone" class="form-control-sm" type="number" placeholder="Com DDD" required>
-		</div>
-
-		<div class="col">
-			Especialidade 
-
-			<select name="especialidade" id="cars">
-				<option value="Sem Especialidade">Sem Especialidade</option>
-				<option value="Desportiva">Desportiva</option>
-				<option value="Geriatria">Geriatria</option>
-				<option value="Neuro">Neuro</option>
-				<option value="Traumato Ortopedia">Traumato Ortopedia</option>
-			  </select>
-
+				CEP<br> <input name="cep" class="form-control-sm" type="number" placeholder="" required min = "00000001" max="99999999">
+			  </div><br>
 		  </div>
-
-	</div>
+		  <div class="col">
+			<div class="col">
+				Bairro<br> <input name="bairro" class="form-control-sm" type="text" placeholder="" required>
+			  </div><br>
+			  <div class="col">
+				Número da casa<br> <input name="n_casa" class="form-control-sm" type="number" placeholder="" required>
+			  </div><br>
+		  </div>
+		  <div class="col">
+			<div class="col">
+				Telefone<br> <input name="telefone" class="form-control-sm" type="number" placeholder="Com DDD" required>
+			  </div><br>
+			  <div class="col">
+				Especialidade<br> 
+				<select name="especialidade" id="cars">
+					<option value="Sem Especialidade">Sem Especialidade</option>
+					<option value="Desportiva">Desportiva</option>
+					<option value="Geriatria">Geriatria</option>
+					<option value="Neuro">Neuro</option>
+					<option value="Traumato Ortopedia">Traumato Ortopedia</option>
+				  </select>
+			  </div><br>
+		  </div>
+		</div>
+	  </div>
 	<br>
 	<button class="btn btn-success"> 
 	<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-send-check" viewBox="0 0 16 16">
