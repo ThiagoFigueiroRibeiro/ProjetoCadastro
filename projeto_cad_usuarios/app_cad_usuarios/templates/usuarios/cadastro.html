@@ -1,0 +1,81 @@
+{% extends 'usuarios/base.html' %}
+{% block conteudo %}
+{% load static %}
+
+
+<form action ="{% url 'listagem_usuarios' %}" method="post">
+  {% csrf_token %}
+  <div style="text-align: center;" class="container">
+    <h1>Cadastro de Usuário</h1>
+	<div class="container">
+		Nome<br><input name="nome" class="form-control" type ="text" placeholder="Nome completo" required>
+	</div><br>
+	
+	<div class="container">
+		<div class="row">
+		  <div class="col">
+			<div class="col">
+				Idade (anos)<br> <input name="idade" class="form-control-sm" type="number" placeholder="Em anos" required min = "1" max="1000">
+			</div><br>
+			<div class="col">
+				CEP<br> <input name="cep" class="form-control-sm" type="number" placeholder="" required min = "00000001" max="99999999">
+			  </div><br>
+		  </div>
+		  <div class="col">
+			<div class="col">
+				Bairro<br> <input name="bairro" class="form-control-sm" type="text" placeholder="" required>
+			  </div><br>
+			  <div class="col">
+				Número da casa<br> <input name="n_casa" class="form-control-sm" type="number" placeholder="" required>
+			  </div><br>
+		  </div>
+		  <div class="col">
+			<div class="col">
+				Telefone<br> <input name="telefone" class="form-control-sm" type="number" placeholder="Com DDD" required>
+			  </div><br>
+			  <div class="col">
+				Especialidade<br> 
+				<select name="especialidade" id="cars">
+					<option value="Sem Especialidade">Sem Especialidade</option>
+					<option value="Desportiva">Desportiva</option>
+					<option value="Geriatria">Geriatria</option>
+					<option value="Neuro">Neuro</option>
+					<option value="Traumato Ortopedia">Traumato Ortopedia</option>
+				  </select>
+			  </div><br>
+		  </div>
+
+		  <div class="col">
+			<div class="col">
+				Historico<br> <input name="historico" class="form-control-sm" type="text" placeholder="" required>
+			  </div><br>
+			  <div class="col">
+				Curso<br> 
+				<select name="curso" id="cars">
+					<option value="Fisioterapia">Fisioterapia</option>
+					<option value="Nutrição">Nutrição</option>
+					<option value="Educação Física">Educação Física</option>
+					<option value="Psicologia">Psicologia</option>
+				  </select>
+			  </div><br>
+		  </div>
+
+		  <div class="col">
+			<div class="col">
+				Outras Informações<br> <input name="info" class="form-control-sm" type="text" placeholder="" required>
+			  </div><br>
+		  </div>
+
+		</div>
+	  </div>
+	<br>
+	<button class="btn btn-success"> 
+	<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-send-check" viewBox="0 0 16 16">
+	<path d="M15.964.686a.5.5 0 0 0-.65-.65L.767 5.855a.75.75 0 0 0-.124 1.329l4.995 3.178 1.531 2.406a.5.5 0 0 0 .844-.536L6.637 10.07l7.494-7.494-1.895 4.738a.5.5 0 1 0 .928.372l2.8-7Zm-2.54 1.183L5.93 9.363 1.591 6.602l11.833-4.733Z"></path>
+	<path d="M16 12.5a3.5 3.5 0 1 1-7 0 3.5 3.5 0 0 1 7 0Zm-1.993-1.679a.5.5 0 0 0-.686.172l-1.17 1.95-.547-.547a.5.5 0 0 0-.708.708l.774.773a.75.75 0 0 0 1.174-.144l1.335-2.226a.5.5 0 0 0-.172-.686Z"></path></svg>
+	Enviar cadastro </button>
+	
+  </div>  
+</form>
+
+{% endblock %}

@@ -1,0 +1,33 @@
+{% extends 'usuarios/base.html' %}
+{% block conteudo %}
+
+<div style="text-align: center;" class="container">
+    <h1>Resultado da Pesquisa</h1>
+    <table class="table table-bordered table-striped">
+        <tr>
+            <th>id</th>
+            <th>Nome</th>
+            <th>Idade</th>
+			<th>CEP</th>
+			<th>Bairro</th>
+            <th>Nº Casa</th>
+            <th>Telefone</th>
+            <th>Especialidade</th>
+        </tr>
+        {% for usuario in usuarios_filter %}
+        <tr>
+            <td>{{usuario.id_usuario}}</td>
+            <td>{{usuario.nome}}</td>
+            <td>{{usuario.idade}}</td>
+			<td>{{usuario.cep}}</td>
+			<td>{{usuario.bairro}}</td>
+            <td>{{usuario.n_casa}}</td>
+            <td>{{usuario.telefone}}</td>
+            <td>{{usuario.especialidade}}</td>
+        </tr>
+        {% endfor %}
+    </table>
+</div>
+
+
+{% endblock %}

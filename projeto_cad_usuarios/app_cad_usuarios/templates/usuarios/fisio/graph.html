@@ -1,0 +1,34 @@
+{% extends 'usuarios/fisio/base-fisio.html' %}
+{% block conteudo %}
+
+<div class="container">
+    <canvas id="myChart"></canvas>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  
+  <script>
+    const ctx = document.getElementById('myChart');
+  
+    new Chart(ctx, {
+      type: 'bar',
+      data: {
+        labels: ['Sem especialidade', 'Desportiva', 'Geriatria','Neuro', 'Traumato Ortopedia',],
+        datasets: [{
+          label: 'Número de usuários',
+          data: [{{ result_se }}, {{ result_de }}, {{ result_ge }}, {{ result_ne }}, {{ result_to }}],
+          borderWidth: 1
+        }]
+      },
+      options: {
+        scales: {
+          y: {
+            beginAtZero: true
+          }
+        }
+      }
+    });
+  </script>
+  
+
+{% endblock %}
