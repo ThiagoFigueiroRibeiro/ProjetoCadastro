@@ -25,6 +25,8 @@ Note que você deve fazer isso somente depois de instalar o Python, caso contrá
 
 # Changelog:
 
+03/10/2023 - Versão Alpha 0005 publicada. Cada curso terá a sua própria área com suas próprias páginas e identidade visual. Foi feita a atualização da barra de navegação pra mostrar os quartro cursos e foi feito um trabalho inicial para o curso de Fisioterapia. Note que cada curso terá a sua própria pasta pra pegar as informações de html, mas todos os cursos tirarão informações da mesma base de dados.
+
 19/09/2023 - Versão Alpha 0004 publicada. Foi instalado o tema SB Admin, um dashboard padrão do bootstrap. Foi incluído uma página de gráficos que mostra a quantidade de usuários por especialidade. Correção de alguns erros. 
 
 18/09/2023 - Criação de uma página /deletar_usuario/ que você pode deletar um usuário com determinada id da base SQL.
