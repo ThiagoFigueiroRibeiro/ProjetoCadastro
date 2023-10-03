@@ -31,6 +31,17 @@ urlpatterns = [
     
     ######## FISIOTERAPIA ###########
     path('fisio/index/',views.index_fisio,name='home_fisio'),
-    path('fisio/usuarios/',views.graph_fisio,name='graph_fisio'),
     path('fisio/exibir/',views.exibir_fisio,name='exibir_fisio'),
+    path('fisio/resultado_pesquisa/',views.resultado_pesquisa_fisio,name='resultado_pesquisa_fisio'),
+    path('fisio/pesquisa/',views.pesquisa_fisio,name='pesquisa_usuarios_fisio'),
+    path('fisio/cadastro/',views.cadastro_fisio,name='cadastro_fisio'),
+    path('fisio/usuarios/',views.usuarios_fisio,name='listagem_usuarios_fisio'),
+
+        ######## EDUCAÇÃO FÍSICA ###########
+    path('edfisica/index/',views.index_edfisica,name='home_edfisica'),
+    path('edfisica/exibir/',views.exibir_edfisica,name='exibir_edfisica'),
+    path('edfisica/resultado_pesquisa/',views.resultado_pesquisa_edfisica,name='resultado_pesquisa_edfisica'),
+    path('edfisica/pesquisa/',views.pesquisa_edfisica,name='pesquisa_usuarios_edfisica'),
+    path('edfisica/cadastro/',views.cadastro_edfisica,name='cadastro_edfisica'),
+    path('edfisica/usuarios/',views.usuarios_edfisica,name='listagem_usuarios_edfisica'),
 ]

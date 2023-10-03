@@ -52,6 +52,9 @@
 
   --bs-dark-rgb: 11, 24, 47;  /* Altera a cor do top navbar - Thiago*/
   --bs-dark-rgb-fisio: 11, 55, 47;  /* Fisioterapia */
+  --bs-dark-rgb-edfisica: 53, 10, 10;  /* Educação Física */
+  --bs-dark-rgb-nutri: 11, 55, 47;  /* Nutrição */
+  --bs-dark-rgb-psico: 11, 55, 47;  /* Psicologia */
 
   --bs-white-rgb: 255, 255, 255;
   --bs-black-rgb: 0, 0, 0;
@@ -8191,6 +8194,21 @@ textarea.form-control-lg {
   background-color: rgba(var(--bs-dark-rgb-fisio), var(--bs-bg-opacity)) !important;
 }
 
+.bg-dark-edfisica {
+  --bs-bg-opacity: 1;
+  background-color: rgba(var(--bs-dark-rgb-edfisica), var(--bs-bg-opacity)) !important;
+}
+
+.bg-dark-nutri {
+  --bs-bg-opacity: 1;
+  background-color: rgba(var(--bs-dark-rgb-nutri), var(--bs-bg-opacity)) !important;
+}
+
+.bg-dark-psico {
+  --bs-bg-opacity: 1;
+  background-color: rgba(var(--bs-dark-rgb-psico), var(--bs-bg-opacity)) !important;
+}
+
 .bg-black {
   --bs-bg-opacity: 1;
   background-color: rgba(var(--bs-black-rgb), var(--bs-bg-opacity)) !important;
@@ -11037,6 +11055,11 @@ background-color: #16305E;   /* Muda cor da navbar lateral - Thiago*/
   background-color: #165D5E;
     color: rgba(255, 255, 255, 0.75);
   }
+
+  .sb-sidenav-dark-edfisica {
+    background-color: #5B1616;
+      color: rgba(255, 255, 255, 0.75);
+    }
 
 .sb-sidenav-dark .sb-sidenav-menu .sb-sidenav-menu-heading {
   color: rgba(255, 255, 255, 0.25);

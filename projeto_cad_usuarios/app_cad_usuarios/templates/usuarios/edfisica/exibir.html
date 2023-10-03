@@ -1,8 +1,8 @@
-{% extends 'usuarios/fisio/base-fisio.html' %}
+{% extends 'usuarios/edfisica/base-edfisica.html' %}
 {% block conteudo %}
 
-<div class="container">
-    <h1>Usuários Cadastrados:</h1>
+<div style="text-align: center;" class="container">
+    <h1>Usuários Cadastrados</h1>
     <table class="table table-bordered table-striped">
         <tr>
             <th>id</th>
@@ -31,9 +31,11 @@
             <td>{{usuario.historico}}</td>
             <td>{{usuario.info}}</td>
         </tr>
+
         {% endfor %}
+        
     </table>
 </div>
-
+</form>
 
 {% endblock %}

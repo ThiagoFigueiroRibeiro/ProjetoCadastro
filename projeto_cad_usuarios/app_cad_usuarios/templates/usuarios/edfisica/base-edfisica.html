@@ -21,14 +21,14 @@
 <!-- Image and text -->
 <html lang="en">
     <body class="sb-nav-fixed">
-        <nav class="sb-topnav navbar navbar-expand navbar-dark bg-dark-fisio">
+        <nav class="sb-topnav navbar navbar-expand navbar-dark bg-dark-edfisica">
             <!-- Navbar Brand-->
-            <a class="navbar-brand ps-3" href="/fisio/index/">LTD 2023 - Fisioterapia</a>
+            <a class="navbar-brand ps-3" href="/edfisica/index/">LTD 2023 - Educação Fìsica</a>
             <!-- Sidebar Toggle-->
             <button class="btn btn-link btn-sm order-1 order-lg-0 me-4 me-lg-0" id="sidebarToggle" href="#!"><i class="fas fa-bars"></i></button>
             
             <!-- Navbar Search-->
-            <form action ="{% url 'resultado_pesquisa_fisio' %}" method="post" class="d-none d-md-inline-block form-inline ms-auto me-0 me-md-3 my-2 my-md-0">
+            <form action ="{% url 'resultado_pesquisa_edfisica' %}" method="post" class="d-none d-md-inline-block form-inline ms-auto me-0 me-md-3 my-2 my-md-0">
               {% csrf_token %}
               <div class="input-group">
                     <input input name="id_usuario_request" class="form-control" type="text" placeholder="Procurar por nome" aria-label="Procurar por nome" aria-describedby="btnNavbarSearch" />
@@ -53,26 +53,26 @@
 
         <div id="layoutSidenav">
             <div id="layoutSidenav_nav">
-                <nav class="sb-sidenav accordion sb-sidenav-dark-fisio" id="sidenavAccordion">
+                <nav class="sb-sidenav accordion sb-sidenav-dark-edfisica" id="sidenavAccordion">
                     <div class="sb-sidenav-menu">
                         <div class="nav">
                             <div class="sb-sidenav-menu-heading">Páginas principais</div>
-                            <a class="nav-link" href="/fisio/index/">
+                            <a class="nav-link" href="/edfisica/index/">
                                 <div class="sb-nav-link-icon"><i class="fa-solid fa-house"></i></div>
-                                Home Fisioterapia
+                                Home Educação Fìsica
                             </a>
                             
-                            <a class="nav-link" href="/fisio/cadastro/">
+                            <a class="nav-link" href="/edfisica/cadastro/">
                                 <div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt"></i></div>
                                 Cadastro de Usuário
                               </a>
 
-                            <a class="nav-link" href="/fisio/exibir">
+                            <a class="nav-link" href="/edfisica/exibir">
                               <div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt"></i></div>
                               Exibir usuários
                             </a>
 
-                            <a class="nav-link" href="/fisio/pesquisa/">
+                            <a class="nav-link" href="/edfisica/pesquisa/">
                               <div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt"></i></div>
                               Pesquisa
                             </a>

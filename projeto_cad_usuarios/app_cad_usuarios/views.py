@@ -118,31 +118,128 @@ def usuarios(request):
     # Retornar os dados para a página de listagem dos usuários
     return render(request,'usuarios/usuarios.html', usuarios)
 
-# Páginas para FISIOTERAPIA
+###### Páginas para FISIOTERAPIA  #########
 
 def index_fisio(request):
     return render(request,'usuarios/fisio/index.html')
-
-def graph_fisio(request):
-    # Exibe todos os usuarios já cadastrados em uma nova página
-    result_1 = Usuario.objects.filter(especialidade = 'Sem Especialidade').count()
-    result_2 = Usuario.objects.filter(especialidade = 'Desportiva').count()
-    result_3 = Usuario.objects.filter(especialidade = 'Geriatria').count()
-    result_4 = Usuario.objects.filter(especialidade = 'Neuro').count()
-    result_5 = Usuario.objects.filter(especialidade = 'Traumato Ortopedia').count()
-
-    context = {
-        'result_se': result_1,
-        'result_de': result_2,
-        'result_ge': result_3,
-        'result_ne': result_4,
-        'result_to': result_5,
-    }
-    # Retorna os dados para a página de listagem dos usuários
-    return render(request,'usuarios/fisio/graph.html', context)
 
 def exibir_fisio(request):
     # Exibe todos os usuarios já cadastrados em uma nova página
     usuarios = {'usuarios': Usuario.objects.filter(curso = 'Fisioterapia')}
     # Retorna os dados para a página de listagem dos usuários
     return render(request,'usuarios/fisio/exibir.html', usuarios)
+
+def pesquisa_fisio(request):
+    # Exibe um usuario específico cadastrado.
+    id_user = request.POST.get('id_usuario_request')
+    usuarios = {
+        'usuarios_filter': Usuario.objects.filter(nome__contains=str(id_user))
+    }
+    return render(request,'usuarios/fisio/pesquisa.html', usuarios)
+
+def resultado_pesquisa_fisio(request):
+    # Exibe um usuario específico cadastrado.
+    id_user = request.POST.get('id_usuario_request')
+    usuarios = {
+        'usuarios_filter': Usuario.objects.filter(nome__contains=str(id_user), curso = 'Fisioterapia')
+    }
+
+    # Exibe o resultado da pesquisa do usuário
+    return render(request,'usuarios/fisio/resultado_pesquisa.html', usuarios)
+
+def cadastro_fisio(request):
+    
+    id_user = request.POST.get('id_usuario_request')
+    usuarios = {
+        'usuarios_filter': Usuario.objects.filter(nome__contains=str(id_user), curso = 'Fisioterapia')
+    }
+    # Criação da página principal do site.
+
+    return render(request,'usuarios/fisio/cadastro.html')
+
+def usuarios_fisio(request):
+    #Salvar os dados da tela para o banco de dados
+    novo_usuario = Usuario()
+    novo_usuario.nome = request.POST.get('nome')
+    novo_usuario.idade = request.POST.get('idade')
+    novo_usuario.cep = request.POST.get('cep')
+    novo_usuario.bairro = request.POST.get('bairro')
+    novo_usuario.n_casa = request.POST.get('n_casa')  
+    novo_usuario.telefone = request.POST.get('telefone')   
+    novo_usuario.especialidade = request.POST.get('especialidade') 
+    novo_usuario.curso = request.POST.get('curso') 
+    novo_usuario.historico = request.POST.get('historico') 
+    novo_usuario.info = request.POST.get('info')         
+    novo_usuario.save()
+
+    #Exibir todos os usuarios já cadastrados em uma nova página
+    usuarios = {
+        'usuarios': Usuario.objects.filter(curso = 'Fisioterapia')
+    }
+
+    # Retornar os dados para a página de listagem dos usuários
+    return render(request,'usuarios/fisio/usuarios.html', usuarios)
+
+
+
+
+
+def index_edfisica(request):
+    return render(request,'usuarios/edfisica/index.html')
+
+def exibir_edfisica(request):
+    # Exibe todos os usuarios já cadastrados em uma nova página
+    usuarios = {'usuarios': Usuario.objects.filter(curso = 'Educação Física')}
+    # Retorna os dados para a página de listagem dos usuários
+    return render(request,'usuarios/edfisica/exibir.html', usuarios)
+
+def resultado_pesquisa_edfisica(request):
+    # Exibe um usuario específico cadastrado.
+    id_user = request.POST.get('id_usuario_request')
+    usuarios = {
+        'usuarios_filter': Usuario.objects.filter(nome__contains=str(id_user), curso = 'Educação Física')
+    }
+
+    # Exibe o resultado da pesquisa do usuário
+    return render(request,'usuarios/edfisica/resultado_pesquisa.html', usuarios)
+
+def pesquisa_edfisica(request):
+    # Exibe um usuario específico cadastrado.
+    id_user = request.POST.get('id_usuario_request')
+    usuarios = {
+        'usuarios_filter': Usuario.objects.filter(nome__contains=str(id_user), curso = 'Educação Física')
+    }
+    return render(request,'usuarios/edfisica/pesquisa.html', usuarios)
+
+def cadastro_edfisica(request):
+    
+    id_user = request.POST.get('id_usuario_request')
+    usuarios = {
+        'usuarios_filter': Usuario.objects.filter(nome__contains=str(id_user))
+    }
+    # Criação da página principal do site.
+
+    return render(request,'usuarios/edfisica/cadastro.html')
+
+def usuarios_edfisica(request):
+    #Salvar os dados da tela para o banco de dados
+    novo_usuario = Usuario()
+    novo_usuario.nome = request.POST.get('nome')
+    novo_usuario.idade = request.POST.get('idade')
+    novo_usuario.cep = request.POST.get('cep')
+    novo_usuario.bairro = request.POST.get('bairro')
+    novo_usuario.n_casa = request.POST.get('n_casa')  
+    novo_usuario.telefone = request.POST.get('telefone')   
+    novo_usuario.especialidade = request.POST.get('especialidade') 
+    novo_usuario.curso = request.POST.get('curso') 
+    novo_usuario.historico = request.POST.get('historico') 
+    novo_usuario.info = request.POST.get('info')         
+    novo_usuario.save()
+
+    #Exibir todos os usuarios já cadastrados em uma nova página
+    usuarios = {
+        'usuarios': Usuario.objects.filter(curso = 'Educação Física')
+    }
+
+    # Retornar os dados para a página de listagem dos usuários
+    return render(request,'usuarios/edfisica/usuarios.html', usuarios)
