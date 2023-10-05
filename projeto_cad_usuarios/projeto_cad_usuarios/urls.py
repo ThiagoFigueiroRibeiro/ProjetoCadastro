@@ -44,4 +44,20 @@ urlpatterns = [
     path('edfisica/pesquisa/',views.pesquisa_edfisica,name='pesquisa_usuarios_edfisica'),
     path('edfisica/cadastro/',views.cadastro_edfisica,name='cadastro_edfisica'),
     path('edfisica/usuarios/',views.usuarios_edfisica,name='listagem_usuarios_edfisica'),
+
+            ######## NUTRIÇÃO ###########
+    path('nutri/index/',views.index_nutri,name='home_nutri'),
+    path('nutri/exibir/',views.exibir_nutri,name='exibir_nutri'),
+    path('nutri/resultado_pesquisa/',views.resultado_pesquisa_nutri,name='resultado_pesquisa_nutri'),
+    path('nutri/pesquisa/',views.pesquisa_nutri,name='pesquisa_usuarios_nutri'),
+    path('nutri/cadastro/',views.cadastro_nutri,name='cadastro_nutri'),
+    path('nutri/usuarios/',views.usuarios_nutri,name='listagem_usuarios_nutri'),
+
+                ######## PSICOLOGIA ###########
+    path('psico/index/',views.index_psico,name='home_psico'),
+    path('psico/exibir/',views.exibir_psico,name='exibir_psico'),
+    path('psico/resultado_pesquisa/',views.resultado_pesquisa_psico,name='resultado_pesquisa_psico'),
+    path('psico/pesquisa/',views.pesquisa_psico,name='pesquisa_usuarios_psico'),
+    path('psico/cadastro/',views.cadastro_psico,name='cadastro_psico'),
+    path('psico/usuarios/',views.usuarios_psico,name='listagem_usuarios_psico'),
 ]
