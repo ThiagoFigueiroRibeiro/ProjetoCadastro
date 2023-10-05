@@ -181,7 +181,7 @@ def usuarios_fisio(request):
     return render(request,'usuarios/fisio/usuarios.html', usuarios)
 
 
-
+######## NUTRIÇÃO ############
 
 
 def index_edfisica(request):
@@ -243,3 +243,132 @@ def usuarios_edfisica(request):
 
     # Retornar os dados para a página de listagem dos usuários
     return render(request,'usuarios/edfisica/usuarios.html', usuarios)
+
+
+
+
+
+
+def index_nutri(request):
+    return render(request,'usuarios/nutri/index.html')
+
+def exibir_nutri(request):
+    # Exibe todos os usuarios já cadastrados em uma nova página
+    usuarios = {'usuarios': Usuario.objects.filter(curso = 'Nutrição')}
+    # Retorna os dados para a página de listagem dos usuários
+    return render(request,'usuarios/nutri/exibir.html', usuarios)
+
+def resultado_pesquisa_nutri(request):
+    # Exibe um usuario específico cadastrado.
+    id_user = request.POST.get('id_usuario_request')
+    usuarios = {
+        'usuarios_filter': Usuario.objects.filter(nome__contains=str(id_user), curso = 'Nutrição')
+    }
+
+    # Exibe o resultado da pesquisa do usuário
+    return render(request,'usuarios/nutri/resultado_pesquisa.html', usuarios)
+
+def pesquisa_nutri(request):
+    # Exibe um usuario específico cadastrado.
+    id_user = request.POST.get('id_usuario_request')
+    usuarios = {
+        'usuarios_filter': Usuario.objects.filter(nome__contains=str(id_user), curso = 'Nutrição')
+    }
+    return render(request,'usuarios/nutri/pesquisa.html', usuarios)
+
+def cadastro_nutri(request):
+    
+    id_user = request.POST.get('id_usuario_request')
+    usuarios = {
+        'usuarios_filter': Usuario.objects.filter(nome__contains=str(id_user))
+    }
+    # Criação da página principal do site.
+
+    return render(request,'usuarios/nutri/cadastro.html')
+
+def usuarios_nutri(request):
+    #Salvar os dados da tela para o banco de dados
+    novo_usuario = Usuario()
+    novo_usuario.nome = request.POST.get('nome')
+    novo_usuario.idade = request.POST.get('idade')
+    novo_usuario.cep = request.POST.get('cep')
+    novo_usuario.bairro = request.POST.get('bairro')
+    novo_usuario.n_casa = request.POST.get('n_casa')  
+    novo_usuario.telefone = request.POST.get('telefone')   
+    novo_usuario.especialidade = request.POST.get('especialidade') 
+    novo_usuario.curso = request.POST.get('curso') 
+    novo_usuario.historico = request.POST.get('historico') 
+    novo_usuario.info = request.POST.get('info')         
+    novo_usuario.save()
+
+    #Exibir todos os usuarios já cadastrados em uma nova página
+    usuarios = {
+        'usuarios': Usuario.objects.filter(curso = 'Nutrição')
+    }
+
+    # Retornar os dados para a página de listagem dos usuários
+    return render(request,'usuarios/nutri/usuarios.html', usuarios)
+
+
+
+
+
+def index_psico(request):
+    return render(request,'usuarios/psico/index.html')
+
+def exibir_psico(request):
+    # Exibe todos os usuarios já cadastrados em uma nova página
+    usuarios = {'usuarios': Usuario.objects.filter(curso = 'Psicologia')}
+    # Retorna os dados para a página de listagem dos usuários
+    return render(request,'usuarios/psico/exibir.html', usuarios)
+
+def resultado_pesquisa_psico(request):
+    # Exibe um usuario específico cadastrado.
+    id_user = request.POST.get('id_usuario_request')
+    usuarios = {
+        'usuarios_filter': Usuario.objects.filter(nome__contains=str(id_user), curso = 'Psicologia')
+    }
+
+    # Exibe o resultado da pesquisa do usuário
+    return render(request,'usuarios/psico/resultado_pesquisa.html', usuarios)
+
+def pesquisa_psico(request):
+    # Exibe um usuario específico cadastrado.
+    id_user = request.POST.get('id_usuario_request')
+    usuarios = {
+        'usuarios_filter': Usuario.objects.filter(nome__contains=str(id_user), curso = 'psicoçãoa')
+    }
+    return render(request,'usuarios/psico/pesquisa.html', usuarios)
+
+def cadastro_psico(request):
+    
+    id_user = request.POST.get('id_usuario_request')
+    usuarios = {
+        'usuarios_filter': Usuario.objects.filter(nome__contains=str(id_user))
+    }
+    # Criação da página principal do site.
+
+    return render(request,'usuarios/psico/cadastro.html')
+
+def usuarios_psico(request):
+    #Salvar os dados da tela para o banco de dados
+    novo_usuario = Usuario()
+    novo_usuario.nome = request.POST.get('nome')
+    novo_usuario.idade = request.POST.get('idade')
+    novo_usuario.cep = request.POST.get('cep')
+    novo_usuario.bairro = request.POST.get('bairro')
+    novo_usuario.n_casa = request.POST.get('n_casa')  
+    novo_usuario.telefone = request.POST.get('telefone')   
+    novo_usuario.especialidade = request.POST.get('especialidade') 
+    novo_usuario.curso = request.POST.get('curso') 
+    novo_usuario.historico = request.POST.get('historico') 
+    novo_usuario.info = request.POST.get('info')         
+    novo_usuario.save()
+
+    #Exibir todos os usuarios já cadastrados em uma nova página
+    usuarios = {
+        'usuarios': Usuario.objects.filter(curso = 'Psicologia')
+    }
+
+    # Retornar os dados para a página de listagem dos usuários
+    return render(request,'usuarios/psico/usuarios.html', usuarios)
