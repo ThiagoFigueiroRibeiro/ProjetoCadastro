@@ -21,6 +21,8 @@ Note que você deve fazer isso somente depois de instalar o Python, caso contrá
 
 # Problemas que você com certeza vai encontrar
 
+"As cores do site estão esquisitas ou não estão funcionando" - Isso é culpa do CSS. Se você abrir o site em uma janela privativa, esse problema deve ser solucionado.
+
 "Minha base de dados está gigante. O que eu faço?" - Apague a base de dados db.sqlite3. Note que ao fazer isso você vai perder todos os dados gravados. Além disso, você vai ter que reviver a base de dados. Não se preocupe, basta rodar o arquivo "revive_database.bat" que ele deve te salvar.
 
 # Changelog:
