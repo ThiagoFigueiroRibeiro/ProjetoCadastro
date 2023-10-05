@@ -1,0 +1,19 @@
+# Manual (incompleto) pra deploy em uma instancia EC2 da AWS
+
+yum update -y
+yum install -y httpd
+systemctl start httpd
+systemctl enable httpd
+
+yum install python3-pip
+python3 get-pip.py --user
+pip3 install Django
+
+wget "https://github.com/ThiagoFigueiroRibeiro/ProjetoCadastro/archive/refs/heads/main.zip"
+unzip main.zip
+cd ProjetoCadastro-main/
+chmod 777 db.sqlite3
+
+# ALLOWED_HOSTS = ['myip','127.0.0.1', 'localhost']
+
+python3 manage.py runserver 0.0.0.0:8000
