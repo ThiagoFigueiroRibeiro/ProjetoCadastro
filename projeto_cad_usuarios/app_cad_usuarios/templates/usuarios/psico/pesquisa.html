@@ -1,7 +1,7 @@
-{% extends 'usuarios/fisio/base-fisio.html' %}
+{% extends 'usuarios/psico/base-psico.html' %}
 {% block conteudo %}
 
-<form action ="{% url 'resultado_pesquisa_fisio' %}" method="post">
+<form action ="{% url 'resultado_pesquisa_psico' %}" method="post">
   {% csrf_token %}
   <div style="text-align: center;" class="container">
     <h1>Pesquisa de Usuários</h1>

@@ -1,9 +1,9 @@
-{% extends 'usuarios/fisio/base-fisio.html' %}
+{% extends 'usuarios/psico/base-psico.html' %}
 {% block conteudo %}
 {% load static %}
 
 
-<form action ="{% url 'listagem_usuarios_fisio' %}" method="post">
+<form action ="{% url 'listagem_usuarios_psico' %}" method="post">
   {% csrf_token %}
   <div style="text-align: center;" class="container">
     <h1>Cadastro de Usuário</h1>
@@ -52,7 +52,7 @@
 			  <div class="col">
 				Curso<br> 
 				<select name="curso" id="cars">
-					<option value="Fisioterapia">Fisioterapia</option>
+					<option value="Psicologia">Psicologia</option>
 				  </select>
 			  </div><br>
 		  </div>
