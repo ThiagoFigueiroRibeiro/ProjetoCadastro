@@ -27,6 +27,8 @@ Note que você deve fazer isso somente depois de instalar o Python, caso contrá
 
 # Changelog:
 
+12/10/2023 - Versão Alpha 0007 publicada. Agora a página de nutrição está com os campos de cadastro "prontos", faltando apenas ajeitar o HTML pra o frontend ficar bonitinho. A base de dados está pronta pra receber dados dos campos da nutrição.
+
 05/10/2023 - Versão Alpha 0006 publicada. Todos os cursos já tem as suas próprias páginas e identidades visuais. Essa versão já está pronta pra exibição para os coordenadores dos cursos que vamos nos reunir. 
 
 03/10/2023 - Versão Alpha 0005 publicada. Cada curso terá a sua própria área com suas próprias páginas e identidade visual. Foi feita a atualização da barra de navegação pra mostrar os quartro cursos e foi feito um trabalho inicial para o curso de Fisioterapia. Note que cada curso terá a sua própria pasta pra pegar as informações de html, mas todos os cursos tirarão informações da mesma base de dados.
