@@ -98,6 +98,8 @@ def incluir_especialidade(request):
 def usuarios(request):
     #Salvar os dados da tela para o banco de dados
     novo_usuario = Usuario()
+    novo_usuario.save()
+
     novo_usuario.nome = request.POST.get('nome')
     novo_usuario.idade = request.POST.get('idade')
     novo_usuario.cep = request.POST.get('cep')
@@ -107,7 +109,8 @@ def usuarios(request):
     novo_usuario.especialidade = request.POST.get('especialidade') 
     novo_usuario.curso = request.POST.get('curso') 
     novo_usuario.historico = request.POST.get('historico') 
-    novo_usuario.info = request.POST.get('info')         
+    novo_usuario.info = request.POST.get('info')
+          
     novo_usuario.save()
 
     #Exibir todos os usuarios já cadastrados em uma nova página
@@ -181,7 +184,7 @@ def usuarios_fisio(request):
     return render(request,'usuarios/fisio/usuarios.html', usuarios)
 
 
-######## NUTRIÇÃO ############
+######## EDUCAÇÃO FÍSICA ############
 
 
 def index_edfisica(request):
@@ -246,7 +249,7 @@ def usuarios_edfisica(request):
 
 
 
-
+###### NUTRIÇÃO #######
 
 
 def index_nutri(request):
@@ -288,17 +291,43 @@ def cadastro_nutri(request):
 
 def usuarios_nutri(request):
     #Salvar os dados da tela para o banco de dados
-    novo_usuario = Usuario()
-    novo_usuario.nome = request.POST.get('nome')
-    novo_usuario.idade = request.POST.get('idade')
-    novo_usuario.cep = request.POST.get('cep')
-    novo_usuario.bairro = request.POST.get('bairro')
-    novo_usuario.n_casa = request.POST.get('n_casa')  
-    novo_usuario.telefone = request.POST.get('telefone')   
-    novo_usuario.especialidade = request.POST.get('especialidade') 
+    novo_usuario = Usuario()       
+    novo_usuario.save()
+
     novo_usuario.curso = request.POST.get('curso') 
-    novo_usuario.historico = request.POST.get('historico') 
-    novo_usuario.info = request.POST.get('info')         
+
+    novo_usuario.NUTRI_data_avaliacao = request.POST.get('NUTRI_data_avaliacao')
+    novo_usuario.nome = request.POST.get('nome')
+    novo_usuario.data_de_nasc = request.POST.get('data_de_nasc')
+    novo_usuario.idade = request.POST.get('idade')
+    novo_usuario.telefone = request.POST.get('telefone')
+    novo_usuario.profissao = request.POST.get('profissao')
+    novo_usuario.NUTRI_objetivo_da_orientacao = request.POST.get('NUTRI_objetivo_da_orientacao')
+    novo_usuario.NUTRI_patologia = request.POST.get('NUTRI_patologia')
+    novo_usuario.NUTRI_antecedentes = request.POST.get('NUTRI_antecedentes')
+    novo_usuario.NUTRI_atividades = request.POST.get('NUTRI_atividades')
+    novo_usuario.NUTRI_atividades_vezes_por_semana = request.POST.get('NUTRI_atividades_vezes_por_semana')
+    novo_usuario.NUTRI_ingestao_agua = request.POST.get('NUTRI_ingestao_agua')
+    novo_usuario.NUTRI_alergia = request.POST.get('NUTRI_alergia')
+    novo_usuario.NUTRI_cafe = request.POST.get('NUTRI_cafe')
+    novo_usuario.NUTRI_lanche_manha = request.POST.get('NUTRI_lanche_manha')
+    novo_usuario.NUTRI_almoco = request.POST.get('NUTRI_almoco')
+    novo_usuario.NUTRI_lanche_tarde = request.POST.get('NUTRI_lanche_tarde')
+    novo_usuario.NUTRI_jantar = request.POST.get('NUTRI_jantar')
+    novo_usuario.NUTRI_ceia = request.POST.get('NUTRI_ceia')
+    
+    novo_usuario.NUTRI_CC = request.POST.get('NUTRI_CC')
+    novo_usuario.NUTRI_CQ = request.POST.get('NUTRI_CQ')
+    novo_usuario.NUTRI_CB = request.POST.get('NUTRI_CB')
+    novo_usuario.NUTRI_PCT = request.POST.get('NUTRI_PCT')
+    novo_usuario.NUTRI_PCB = request.POST.get('NUTRI_PCB')
+    novo_usuario.NUTRI_PCSE = request.POST.get('NUTRI_PCSE')
+    novo_usuario.NUTRI_PCSI = request.POST.get('NUTRI_PCSI')
+    novo_usuario.NUTRI_gordura = request.POST.get('NUTRI_gordura')
+    novo_usuario.NUTRI_massa = request.POST.get('NUTRI_massa')
+    novo_usuario.NUTRI_idade_metab = request.POST.get('NUTRI_idade_metab')
+    novo_usuario.NUTRI_gordura_visc = request.POST.get('NUTRI_gordura_visc')
+    
     novo_usuario.save()
 
     #Exibir todos os usuarios já cadastrados em uma nova página
