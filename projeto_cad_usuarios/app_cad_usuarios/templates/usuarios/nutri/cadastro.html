@@ -6,66 +6,143 @@
 <form action ="{% url 'listagem_usuarios_nutri' %}" method="post">
   {% csrf_token %}
   <div style="text-align: center;" class="container">
-    <h1>Cadastro de Usuário</h1>
+    <h1>Ficha de Atendimento</h1>
 	<div class="container">
-		Nome<br><input name="nome" class="form-control" type ="text" placeholder="Nome completo" required>
+		Data da Avaliação<br><input name="NUTRI_data_avaliacao" class="form-control" type ="text" placeholder="DD/MM/AAAA" required>
 	</div><br>
+
+	 <h1>IDENTIFICAÇÃO DO PACIENTE</h1>
+	Nome Completo: <br><input name="nome" class="form-control" type ="text" placeholder="Nome, sobrenome" required>
+
+	<div class="container">
+		Data de Nascimento<br><input name="data_de_nasc" class="form-control" type ="text" placeholder="DD/MM/AAAA" required>
+	</div><br> 
+
+	<div class="container">
+		Idade<br><input name="idade" class="form-control" type ="number" placeholder="Em anos" required>
+	</div><br> 
+
+	<div class="container">
+		Telefone<br><input name="telefone" class="form-control" type ="number" placeholder="Celular com DDD" required>
+	</div><br> 
 	
 	<div class="container">
-		<div class="row">
-		  <div class="col">
-			<div class="col">
-				Idade (anos)<br> <input name="idade" class="form-control-sm" type="number" placeholder="Em anos" required min = "1" max="1000">
-			</div><br>
-			<div class="col">
-				CEP<br> <input name="cep" class="form-control-sm" type="number" placeholder="" required min = "00000001" max="99999999">
-			  </div><br>
-		  </div>
-		  <div class="col">
-			<div class="col">
-				Bairro<br> <input name="bairro" class="form-control-sm" type="text" placeholder="" required>
-			  </div><br>
-			  <div class="col">
-				Número da casa<br> <input name="n_casa" class="form-control-sm" type="number" placeholder="" required>
-			  </div><br>
-		  </div>
-		  <div class="col">
-			<div class="col">
-				Telefone<br> <input name="telefone" class="form-control-sm" type="number" placeholder="Com DDD" required>
-			  </div><br>
-			  <div class="col">
-				Especialidade<br> 
-				<select name="especialidade" id="cars">
-					<option value="Sem Especialidade">Sem Especialidade</option>
-					<option value="Desportiva">Desportiva</option>
-					<option value="Geriatria">Geriatria</option>
-					<option value="Neuro">Neuro</option>
-					<option value="Traumato Ortopedia">Traumato Ortopedia</option>
-				  </select>
-			  </div><br>
-		  </div>
+		Profissão<br><input name="profissao" class="form-control" type ="text" placeholder="Profissão" required>
+	</div><br> 
 
-		  <div class="col">
-			<div class="col">
-				Historico<br> <input name="historico" class="form-control-sm" type="text" placeholder="" required>
-			  </div><br>
-			  <div class="col">
-				Curso<br> 
-				<select name="curso" id="cars">
-					<option value="Nutrição">Nutrição</option>
-				  </select>
-			  </div><br>
-		  </div>
+	<div class="container">
+		1. Objetivo da orientação:<br><input name="NUTRI_objetivo_da_orientacao" class="form-control" type ="text" placeholder="Objetivo" required>
+	</div><br> 
 
-		  <div class="col">
-			<div class="col">
-				Outras Informações<br> <input name="info" class="form-control-sm" type="text" placeholder="" required>
-			  </div><br>
-		  </div>
+	<div class="container">
+		Você tem alguma patologia? <br><input name="NUTRI_patologia" class="form-control" type ="text" placeholder="Se sim, qual (quais)?" required>
+	</div><br> 
 
-		</div>
-	  </div>
-	<br>
+	<div class="container">
+		Antecedentes familiares:<br><input name="NUTRI_antecedentes" class="form-control" type ="text" placeholder="Antecedentes" required>
+	</div><br> 
+
+	3. Atividade física
+
+	<div class="container">
+		Qual atividade?<br><input name="NUTRI_atividades" class="form-control" type ="text" placeholder="Atividade" required>
+	</div><br> 
+
+	<div class="container">
+		Quantas vezes por semana?<br><input name="NUTRI_atividades_vezes_por_semana" class="form-control" type ="number" placeholder="Vezes por Semana" required>
+	</div><br> 
+
+	<div class="container">
+		Qual a sua ingestão de água diária?<br><input name="NUTRI_ingestao_agua" class="form-control" type ="number" placeholder="Em minilitros" required>
+	</div><br> 
+
+	<div class="container">
+		Tem alguma alergia alimentar?<br><input name="NUTRI_alergia" class="form-control" type ="text" placeholder="Se sim, a que?" required>
+	</div><br> 
+
+	<h1>2 RECORDATÓRIO HABITUAL</h1>
+	
+
+	<div class="container">
+		Café da Manhã<br><input name="NUTRI_cafe" class="form-control" type ="text" placeholder="HH:MM" required>
+	</div><br> 
+	<div class="container">
+		Lanche da Manhã<br><input name="NUTRI_lanche_manha" class="form-control" type ="text" placeholder="HH:MM" required>
+	</div><br> 
+	<div class="container">
+		Almoço<br><input name="NUTRI_almoco" class="form-control" type ="text" placeholder="HH:MM" required>
+	</div><br> 
+	<div class="container">
+		Lanche da Tarde<br><input name="NUTRI_lanche_tarde" class="form-control" type ="text" placeholder="HH:MM" required>
+	</div><br> 
+	<div class="container">
+		Jantar<br><input name="NUTRI_jantar" class="form-control" type ="text" placeholder="HH:MM" required>
+	</div><br> 
+	<div class="container">
+		Ceia<br><input name="NUTRI_ceia" class="form-control" type ="text" placeholder="HH:MM" required>
+	</div><br> 
+
+
+	<h1>AVALIAÇÃO ANTROPOMÉTRICA</h1>
+	<div class="container">
+		Altura<br><input name="altura" class="form-control" type ="altura" placeholder="Em centímetros" required>
+	</div><br> 
+	<div class="container">
+		Peso<br><input name="peso" class="form-control" type ="peso" placeholder="Em kg" required>
+	</div><br> 
+	<div class="container">
+		IMC<br><input name="IMC" class="form-control" type ="imc" placeholder="Em kg/m2" required>
+	</div><br> 
+
+	Circunferências:
+
+	<div class="container">
+		CC<br><input name="NUTRI_CC" class="form-control" type ="altura" placeholder="Em centímetros" required>
+	</div><br> 
+	<div class="container">
+		CQ<br><input name="NUTRI_CQ" class="form-control" type ="peso" placeholder="Em kg" required>
+	</div><br> 
+	<div class="container">
+		CB<br><input name="NUTRI_CB" class="form-control" type ="imc" placeholder="Em kg/m2" required>
+	</div><br> 
+
+	Dobras Cutâneas:
+
+	<div class="container">
+		PCT<br><input name="NUTRI_PCT" class="form-control" type ="altura" placeholder="Em centímetros" required>
+	</div><br> 
+	<div class="container">
+		PCB<br><input name="NUTRI_PCB" class="form-control" type ="peso" placeholder="Em kg" required>
+	</div><br> 
+	<div class="container">
+		PCSE<br><input name="NUTRI_PCSE" class="form-control" type ="imc" placeholder="Em kg/m2" required>
+	</div><br> 
+	<div class="container">
+		PCSI<br><input name="NUTRI_PCSI" class="form-control" type ="imc" placeholder="Em kg/m2" required>
+	</div><br> 
+
+	BIOIMPEDÂNCIA
+
+	<div class="container">
+		% Gordura<br><input name="NUTRI_gordura" class="form-control" type ="altura" placeholder="Em centímetros" required>
+	</div><br> 
+	<div class="container">
+		% Massa muscular<br><input name="NUTRI_massa" class="form-control" type ="peso" placeholder="Em kg" required>
+	</div><br> 
+	<div class="container">
+		Idade metabólica<br><input name="NUTRI_idade_metab" class="form-control" type ="imc" placeholder="Em kg/m2" required>
+	</div><br>
+	<div class="container">
+		Gordura Viceral<br><input name="NUTRI_gordura_visc" class="form-control" type ="imc" placeholder="Em kg/m2" required>
+	</div><br> 
+
+	Curso
+	<br> 
+	<select name="curso" id="cars">
+		<option value="Nutrição">Nutrição</option>
+	  </select>
+	  <br><br>
+
 	<button class="btn btn-success"> 
 	<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-send-check" viewBox="0 0 16 16">
 	<path d="M15.964.686a.5.5 0 0 0-.65-.65L.767 5.855a.75.75 0 0 0-.124 1.329l4.995 3.178 1.531 2.406a.5.5 0 0 0 .844-.536L6.637 10.07l7.494-7.494-1.895 4.738a.5.5 0 1 0 .928.372l2.8-7Zm-2.54 1.183L5.93 9.363 1.591 6.602l11.833-4.733Z"></path>

@@ -7,29 +7,71 @@
         <tr>
             <th>id</th>
             <th>Nome</th>
-            <th>Idade</th>
-			<th>CEP</th>
-			<th>Bairro</th>
-            <th>Nº Casa</th>
-            <th>Telefone</th>
-            <th>Especialidade</th>
-            <th>Curso</th>
-            <th>Histórico</th>
-            <th>Informações adicionais</th>
+            <th>Data da Avaliação</th>
+            <th>Nascimento</th>
+			<th>Idade</th>
+			<th>Telefone</th>
+            <th>Profissão</th>
+            <th>Objetivo</th>
+            <th>Patologia?</th>
+            <th>Antecedentes</th>
+            <th>Atividade física?</th>
+            <th>Quantas vezes?</th>
+            <th>Quantos litros de água?</th>
+            <th>Alergia?</th>
+            <th>Hora café</th>
+            <th>Hora lanche manhã</th>
+            <th>Hora almoço</th>
+            <th>Hora lanche da tarde</th>
+            <th>Hora jantar</th>
+            <th>Hora ceia</th>
+            <th>CC</th>
+            <th>CQ</th>
+            <th>CB</th>
+            <th>PCT</th>
+            <th>PCB</th>
+            <th>PCSE</th>
+            <th>PCSI</th>
+            <th>% Gordura</th>
+            <th>% Massa muscular</th>
+            <th>Idade metabólica</th>
+            <th>Gordura visceral</th>
+
         </tr>
         {% for usuario in usuarios %}
         <tr>
             <td>{{usuario.id_usuario}}</td>
             <td>{{usuario.nome}}</td>
-            <td>{{usuario.idade}}</td>
-			<td>{{usuario.cep}}</td>
-			<td>{{usuario.bairro}}</td>
-            <td>{{usuario.n_casa}}</td>
-            <td>{{usuario.telefone}}</td>
-            <td>{{usuario.especialidade}}</td>
-            <td>{{usuario.curso}}</td>
-            <td>{{usuario.historico}}</td>
-            <td>{{usuario.info}}</td>
+            <td>{{usuario.NUTRI_data_avaliacao}}</td>
+            <td>{{usuario.data_de_nasc}}</td>
+			<td>{{usuario.idade}}</td>
+			<td>{{usuario.telefone}}</td>
+            <td>{{usuario.profissao}}</td>
+            <td>{{usuario.NUTRI_objetivo_da_orientacao}}</td>
+            <td>{{usuario.NUTRI_patologia}}</td>
+            <td>{{usuario.NUTRI_antecedentes}}</td>
+            <td>{{usuario.NUTRI_atividades}}</td>
+            <td>{{usuario.NUTRI_atividades_vezes_por_semana}}</td>
+            <td>{{usuario.NUTRI_ingestao_agua}}</td>
+            <td>{{usuario.NUTRI_alergia}}</td>
+            <td>{{usuario.NUTRI_cafe}}</td>
+            <td>{{usuario.NUTRI_lanche_manha}}</td>
+            <td>{{usuario.NUTRI_almoco}}</td>
+            <td>{{usuario.NUTRI_lanche_tarde}}</td>
+            <td>{{usuario.NUTRI_jantar}}</td>
+            <td>{{usuario.NUTRI_ceia}}</td>
+            <td>{{usuario.NUTRI_CC}}</td>
+            <td>{{usuario.NUTRI_CQ}}</td>
+            <td>{{usuario.NUTRI_CB}}</td>
+            <td>{{usuario.NUTRI_PCT}}</td>
+            <td>{{usuario.NUTRI_PCB}}</td>
+            <td>{{usuario.NUTRI_PCSE}}</td>
+            <td>{{usuario.NUTRI_PCSI}}</td>
+            <td>{{usuario.NUTRI_gordura}}</td>
+            <td>{{usuario.NUTRI_massa}}</td>
+            <td>{{usuario.NUTRI_idade_metab}}</td>
+            <td>{{usuario.NUTRI_gordura_visc}}</td>
+
         </tr>
         {% endfor %}
     </table>
