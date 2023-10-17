@@ -2,7 +2,7 @@
 {% block conteudo %}
 
 <div style="text-align: text-justify;">
-    <h1>Usuários Cadastrados:</h1>
+    <h1>Usuários Infantis Cadastrados</h1>
     <table class="table table-bordered table-striped">
         <tr>
             <th>id</th>
@@ -13,16 +13,26 @@
             <th>Identidade (RG)</th>
             <th>CPF</th>
             <th>Data de Nascimento</th>
-            <th>Estado Civil</th>
             <th>Raça</th>
-            <th>Identidade de gênero</th>
             <th>CEP</th>
             <th>Bairro</th>
             <th>Nº da casa</th>
-            <th>E-mail</th>
-            <th>Telefone</th>
-            <th>Grau de Escolaridade</th>
-            <th>Ocupação</th>
+            <th>Escola</th>
+            <th>Ano Escolar</th>
+
+            <th>Nome Social do responsável<pre> 
+            <th>Idade do responsável</th>
+            <th>Identidade (RG) do responsável</th>
+            <th>CPF do responsável</th>
+            <th>Data de Nascimento do responsável</th>
+            <th>CEP do responsável</th>
+            <th>Bairro do responsável</th>
+            <th>Nº da casa do responsável</th>
+            <th>E-mail do responsável</th>
+            <th>Telefone do responsável</th>
+            <th>Grau de Parentesco do responsável</th>
+            <th>Ocupação do responsável</th>
+
             <th>Descrição da demanda inicial / Queixa apresentada<pre>                                               </pre></th>
             <th>Observações<pre>                                               </pre></th>
             <th>Transcrição do Atendimento<pre>                                               </pre></th>
@@ -39,25 +49,38 @@
             <td>{{usuario.rg}}</td>
             <td>{{usuario.cpf}}</td>
             <td>{{usuario.data_de_nasc}}</td>
-            <td>{{usuario.estado_civil}}</td>
             <td>{{usuario.raca}}</td>
-            <td>{{usuario.id_genero}}</td>
             <td>{{usuario.cep}}</td>
             <td>{{usuario.bairro}}</td>
             <td>{{usuario.n_casa}}</td>
-            <td>{{usuario.email}}</td>
-            <td>{{usuario.telefone}}</td>
-            <td>{{usuario.escolaridade}}</td>
-            <td>{{usuario.profissao}}</td>
+            <td>{{usuario.PSICO_escola}}</td>
+
+            <td>{{usuario.PSICO_resp_nome}}</td>
+            <td>{{usuario.PSICO_resp_idade}}</td>
+            <td>{{usuario.PSICO_resp_rg}}</td>
+            <td>{{usuario.PSICO_resp_cpf}}</td>
+            <td>{{usuario.PSICO_resp_data_de_nasc}}</td>
+            <td>{{usuario.PSICO_resp_cep}}</td>
+            <td>{{usuario.PSICO_resp_bairro}}</td>
+            <td>{{usuario.PSICO_resp_n_casa}}</td>
+            <td>{{usuario.PSICO_resp_parentesco}}</td>
+            <td>{{usuario.PSICO_resp_profissao}}</td>
+            <td>{{usuario.PSICO_resp_telefone}}</td>
+            <td>{{usuario.PSICO_resp_email}}</td>
+
+            <td>{{usuario.PSICO_ano_escolar}}</td>
             <td>{{usuario.PSICO_demanda_inicial}}</td>
             <td>{{usuario.PSICO_observacoes}}</td>
             <td>{{usuario.PSICO_transcricao}}</td>
             <td>{{usuario.PSICO_estagiario_resp}}</td>
             <td>{{usuario.PSICO_supervisor_resp}}</td>
         </tr>
+
         {% endfor %}
+        
     </table>
 </div>
+</form> 
 
 
 {% endblock %}
