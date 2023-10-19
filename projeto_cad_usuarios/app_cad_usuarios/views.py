@@ -269,6 +269,16 @@ def resultado_pesquisa_nutri(request):
     # Exibe o resultado da pesquisa do usuário
     return render(request,'usuarios/nutri/resultado_pesquisa.html', usuarios)
 
+def exibir_ficha_nutri(request):
+    # Exibe um usuario específico cadastrado.
+    id_user = request.POST.get('id_usuario_request')
+    usuarios = {
+        'usuarios_filter': Usuario.objects.filter(id_usuario=str(id_user), curso = 'Nutrição')
+    }
+
+    # Exibe o resultado da pesquisa do usuário
+    return render(request,'usuarios/nutri/exibir_ficha.html', usuarios)
+
 def pesquisa_nutri(request):
     # Exibe um usuario específico cadastrado.
     id_user = request.POST.get('id_usuario_request')
@@ -314,6 +324,10 @@ def usuarios_nutri(request):
     novo_usuario.NUTRI_jantar = request.POST.get('NUTRI_jantar')
     novo_usuario.NUTRI_ceia = request.POST.get('NUTRI_ceia')
     
+    novo_usuario.altura = request.POST.get('altura')
+    novo_usuario.peso = request.POST.get('peso')
+    novo_usuario.imc = request.POST.get('IMC')
+
     novo_usuario.NUTRI_CC = request.POST.get('NUTRI_CC')
     novo_usuario.NUTRI_CQ = request.POST.get('NUTRI_CQ')
     novo_usuario.NUTRI_CB = request.POST.get('NUTRI_CB')
@@ -330,7 +344,7 @@ def usuarios_nutri(request):
 
     #Exibir todos os usuarios já cadastrados em uma nova página
     usuarios = {
-        'usuarios': Usuario.objects.filter(curso = 'Nutrição')
+        'usuarios': Usuario.objects.filter(id_usuario = novo_usuario.id_usuario, curso = 'Nutrição')
     }
 
     # Retornar os dados para a página de listagem dos usuários
@@ -418,7 +432,7 @@ def usuarios_psico(request):
 
     #Exibir todos os usuarios já cadastrados em uma nova página
     usuarios = {
-        'usuarios': Usuario.objects.filter(curso = 'Psicologia')
+        'usuarios': Usuario.objects.filter(id_usuario = novo_usuario.id_usuario, curso = 'Psicologia')
     }
 
     # Retornar os dados para a página de listagem dos usuários
@@ -473,8 +487,28 @@ def usuarios_psico_juvenil(request):
 
     #Exibir todos os usuarios já cadastrados em uma nova página
     usuarios = {
-        'usuarios': Usuario.objects.filter(curso = 'Psicologia')
+        'usuarios': Usuario.objects.filter(id_usuario = novo_usuario.id_usuario, curso = 'Psicologia')
     }
 
     # Retornar os dados para a página de listagem dos usuários
     return render(request,'usuarios/psico/usuarios_juvenil.html', usuarios)
+
+def exibir_ficha_juvenil_psico(request):
+    # Exibe um usuario específico cadastrado.
+    id_user = request.POST.get('id_usuario_request')
+    usuarios = {
+        'usuarios_filter': Usuario.objects.filter(id_usuario=str(id_user), curso = 'Psicologia')
+    }
+
+    # Exibe o resultado da pesquisa do usuário
+    return render(request,'usuarios/psico/exibir_ficha_juvenil.html', usuarios)
+
+def exibir_ficha_adulto_psico(request):
+    # Exibe um usuario específico cadastrado.
+    id_user = request.POST.get('id_usuario_request')
+    usuarios = {
+        'usuarios_filter': Usuario.objects.filter(id_usuario=str(id_user), curso = 'Psicologia')
+    }
+
+    # Exibe o resultado da pesquisa do usuário
+    return render(request,'usuarios/psico/exibir_ficha_adulto.html', usuarios)

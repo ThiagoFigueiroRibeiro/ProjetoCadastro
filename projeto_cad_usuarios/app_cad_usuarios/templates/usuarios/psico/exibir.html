@@ -1,66 +1,52 @@
 {% extends 'usuarios/psico/base-psico.html' %}
 {% block conteudo %}
 
+
 <div style="text-align: text-justify;">
     <h1>Usuários Adultos Cadastrados</h1>
     <table class="table table-bordered table-striped">
         <tr>
             <th>id</th>
-            <th>Nº Cadastro</th>
-            <th>Data</th>
-            <th>Nome Social<pre>                   </pre></th>
-            <th>Idade</th>
-            <th>Identidade (RG)</th>
-            <th>CPF</th>
-            <th>Data de Nascimento</th>
-            <th>Estado Civil</th>
-            <th>Raça</th>
-            <th>Identidade de gênero</th>
-            <th>CEP</th>
-            <th>Bairro</th>
-            <th>Nº da casa</th>
-            <th>E-mail</th>
-            <th>Telefone</th>
-            <th>Grau de Escolaridade</th>
-            <th>Ocupação</th>
-            <th>Descrição da demanda inicial / Queixa apresentada<pre>                                               </pre></th>
-            <th>Observações<pre>                                               </pre></th>
-            <th>Transcrição do Atendimento<pre>                                               </pre></th>
-            <th>Estagiário responsável</th>
-            <th>Supervisor Responsável</th>
-
+            <th>Nome</th>
+            <th>Data da Avaliação</th>
+            <th>Nascimento</th>
+			<th>Idade</th>
+			<th>Telefone</th>
+            <th>Exibir Ficha</th>
         </tr>
         {% for usuario in usuarios %}
         <tr>
             <td>{{usuario.id_usuario}}</td>
-            <td>{{usuario.PSICO_N_cadastro}}</td>
-            <td>{{usuario.data_atendimento}}</td>
             <td>{{usuario.nome}}</td>
-            <td>{{usuario.idade}}</td>
-            <td>{{usuario.rg}}</td>
-            <td>{{usuario.cpf}}</td>
+            <td>{{usuario.data_atendimento}}</td>
             <td>{{usuario.data_de_nasc}}</td>
-            <td>{{usuario.estado_civil}}</td>
-            <td>{{usuario.raca}}</td>
-            <td>{{usuario.id_genero}}</td>
-            <td>{{usuario.cep}}</td>
-            <td>{{usuario.bairro}}</td>
-            <td>{{usuario.n_casa}}</td>
-            <td>{{usuario.email}}</td>
-            <td>{{usuario.telefone}}</td>
-            <td>{{usuario.escolaridade}}</td>
-            <td>{{usuario.profissao}}</td>
-            <td>{{usuario.PSICO_demanda_inicial}}</td>
-            <td>{{usuario.PSICO_observacoes}}</td>
-            <td>{{usuario.PSICO_transcricao}}</td>
-            <td>{{usuario.PSICO_estagiario_resp}}</td>
-            <td>{{usuario.PSICO_supervisor_resp}}</td>
-        </tr>
+			<td>{{usuario.idade}}</td>
+			<td>{{usuario.telefone}}</td>
+            <td>
+                <form action ="{% url 'exibir_ficha_adulto_psico' %}" method="post">
+                    {% csrf_token %}
+                    <input type="hidden" id="hidden-input" name="hidden_data">
+                              <div class="col">
+                                <input type="hidden" name="id_usuario_request" value = {{usuario.id_usuario}} class="form-control-sm" type="" placeholder="" required >
+                              </div>
+                      
+                      <button class="btn btn-success"> 
+                      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-send-check" viewBox="0 0 16 16">
+                      <path d="M15.964.686a.5.5 0 0 0-.65-.65L.767 5.855a.75.75 0 0 0-.124 1.329l4.995 3.178 1.531 2.406a.5.5 0 0 0 .844-.536L6.637 10.07l7.494-7.494-1.895 4.738a.5.5 0 1 0 .928.372l2.8-7Zm-2.54 1.183L5.93 9.363 1.591 6.602l11.833-4.733Z"></path>
+                      <path d="M16 12.5a3.5 3.5 0 1 1-7 0 3.5 3.5 0 0 1 7 0Zm-1.993-1.679a.5.5 0 0 0-.686.172l-1.17 1.95-.547-.547a.5.5 0 0 0-.708.708l.774.773a.75.75 0 0 0 1.174-.144l1.335-2.226a.5.5 0 0 0-.172-.686Z"></path></svg>
+                      Exibir Ficha</button>
+                      
+                    </div>  
+                  </form>
+
+            </td>
 
         {% endfor %}
         
     </table>
 </div>
+</form>
+
 </form> 
 
 {% endblock %}

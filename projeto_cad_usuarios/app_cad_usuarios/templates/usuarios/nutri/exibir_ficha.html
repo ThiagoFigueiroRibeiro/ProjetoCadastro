@@ -1,0 +1,106 @@
+{% extends 'usuarios/nutri/base-nutri.html' %}
+{% block conteudo %}
+
+<div style="text-align: text-justify;">
+    <table class="table table-bordered table-striped">
+        {% for usuario in usuarios_filter %}
+
+        <div style="text-align: left;" class="container">
+            <h1>Ficha de Atendimento</h1>
+        
+            <div class="row">
+                <div class="col-4"><b>Data da Avaliação:</b>  {{usuario.NUTRI_data_avaliacao}}</div>
+                <div class="col-4"><b>Curso:</b> Nutrição</div>
+                <div class="col-4"><b>Número identificador (ID):</b> {{usuario.id_usuario}}</div>
+            </div>      
+        <br>
+        
+             <h2>Identificação do Paciente</h2>
+        
+             <div class="row">
+                <div class="col-8"><b>Nome Completo:</b> {{usuario.nome}}</div>
+                <div class="col-4"><b>Data de Nascimento:</b> {{usuario.data_de_nasc}} </div> 
+            </div>      
+        <br>
+        
+        <div class="row">
+            <div class="col-4"> <b>Idade:</b> {{usuario.idade}}</div> 
+            <div class="col-4"> <b>Telefone:</b> {{usuario.telefone}}</div> 
+            <div class="col-4"> <b>Profissão:</b> {{usuario.profissao}}</div>
+        </div>      
+        <br>
+        
+        <div class="row">
+            <div class="col-4"> <b>1. Objetivo da orientação:</b> {{usuario.NUTRI_objetivo_da_orientacao}}</div> 
+            <div class="col-4"> <b>Você tem alguma patologia?</b>{{usuario.NUTRI_patologia}}</div> 
+            <div class="col-4"><b> Antecedentes familiares: </b>{{usuario.NUTRI_antecedentes}}</div>
+        </div>      
+        <br>
+        
+        <h2>Atividade Física</h2>
+        
+        <div class="row">
+            <div class="col-4"> <b>Qual atividade?</b> {{usuario.NUTRI_atividades}}</div> 
+            <div class="col-4"> <b>Quantas vezes por semana?</b> {{usuario.NUTRI_atividades_vezes_por_semana}}</div> 
+            <div class="col-4"> <b>Qual a sua ingestão de água diária?</b> {{usuario.NUTRI_ingestao_agua}} </div>
+        </div>      
+        <br>
+        
+        <div class="row">
+            <div class="col-4"> <b>Tem alguma alergia alimentar?</b> {{usuario.NUTRI_alergia}}</div>
+        </div><br> 
+        
+            <h2>Recordatório Habitual</h2>
+            
+            <div class="row">
+                <div class="col-4"> <b>Café da Manhã:</b> {{usuario.NUTRI_cafe}}</div> 
+                <div class="col-4"> <b>Lanche da Manhã:</b> {{usuario.NUTRI_lanche_manha}}</div> 
+                <div class="col-4"> <b>Almoço: </b>{{usuario.NUTRI_almoco}}</div>
+            </div>      
+        <br>	<div class="row">
+            <div class="col-4"> <b>Lanche da Tarde:</b> {{usuario.NUTRI_lanche_tarde}}</div> 
+            <div class="col-4"> <b>Jantar:</b> {{usuario.NUTRI_jantar}}</div> 
+            <div class="col-4"> <b>Ceia:</b> {{usuario.NUTRI_ceia}}</div>
+        </div>      
+        <br>
+        
+        <h2>Avaliação Antropométrica</h2>
+        
+            <div class="row">
+                <div class="col-4"><b>Altura: </b>{{usuario.altura}}</div> 
+                <div class="col-4"> <b>Peso:</b> {{usuario.peso}}</div> 
+                <div class="col-4"><b> IMC: </b>{{usuario.imc}}</div>
+            </div>      
+        <br>
+        
+        <h4>Circunferências</h4>
+            <div class="row">
+                <div class="col-4"> <b>CC:</b> {{usuario.NUTRI_CC}}</div> 
+                <div class="col-4"> <b>CQ:</b> {{usuario.NUTRI_CQ}}</div> 
+                <div class="col-4"> <b>CB: </b>{{usuario.NUTRI_CB}}</div>
+            </div>      
+        <br>
+        
+        <h4>Dobras Cutâneas:</h4>
+            <div class="row">
+                <div class="col-3"> <b>PCT:</b> {{usuario.NUTRI_PCT}}</div> 
+                <div class="col-3"> <b>PCB: </b>{{usuario.NUTRI_PCB}}</div> 
+                <div class="col-3"> <b>PCSE: </b>{{usuario.NUTRI_PCSE}}</div>
+                <div class="col-3"> <b>PCSI: </b>{{usuario.NUTRI_PCSI}}</div>
+            </div>      
+        <br>
+        
+        <h4>Bioimpedância</h4>
+            <div class="row">
+                <div class="col-3"> <b>% Gordura: </b>{{usuario.NUTRI_gordura}}</div> 
+                <div class="col-3"> <b>% Massa muscular: </b>{{usuario.NUTRI_massa}}</div> 
+                <div class="col-3"> <b>Idade metabólica:</b> {{usuario.NUTRI_idade_metab}}</div>
+                <div class="col-3"> <b>Gordura Viceral: </b>{{usuario.NUTRI_gordura_visc}}</div>
+            </div>      
+        <br>
+        {% endfor %}
+    </table>
+</div>
+
+
+{% endblock %}
