@@ -52,6 +52,7 @@ urlpatterns = [
     path('nutri/pesquisa/',views.pesquisa_nutri,name='pesquisa_usuarios_nutri'),
     path('nutri/cadastro/',views.cadastro_nutri,name='cadastro_nutri'),
     path('nutri/usuarios/',views.usuarios_nutri,name='listagem_usuarios_nutri'),
+    path('nutri/exibir_ficha/',views.exibir_ficha_nutri,name='exibir_ficha_nutri'),
 
                 ######## PSICOLOGIA ###########
     path('psico/index/',views.index_psico,name='home_psico'),
@@ -63,4 +64,6 @@ urlpatterns = [
     path('psico/usuarios_juvenil/',views.usuarios_psico_juvenil,name='listagem_usuarios_psico_juvenil'),
     path('psico/cad_adulto/',views.usuarios_cad_adulto_psico,name='usuarios_cad_adulto_psico'),
     path('psico/cad_juvenil/',views.usuarios_cad_juvenil_psico,name='usuarios_cad_juvenil_psico'),
+    path('nutri/exibir_ficha_juvenil/',views.exibir_ficha_juvenil_psico,name='exibir_ficha_juvenil_psico'),
+    path('nutri/exibir_ficha_adulto/',views.exibir_ficha_adulto_psico,name='exibir_ficha_adulto_psico'),
 ]
