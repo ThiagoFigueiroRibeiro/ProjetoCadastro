@@ -1,0 +1,71 @@
+{% extends 'usuarios/psico/base-psico.html' %}
+{% block conteudo %}
+
+<div style="text-align: text-justify;">
+    <table class="table table-bordered table-striped">
+        {% for usuario in usuarios_filter %}
+
+    <div style="text-align: left;" class="container">
+      <h1>Prontuário Adulto</h1>
+      <br>
+      <div class="col-4"><b>Número identificador (ID):</b> {{usuario.id_usuario}}</div>
+      <div class="row">  
+        <div class="col-4"> <b>N° CADASTRO:</b> {{usuario.PSICO_N_cadastro}}</div> 
+          <div class="col-4"> <b>Data do atendimento:</b> {{usuario.data_atendimento}}</div> 
+          <div class="col-4"><b> E-mail:</b> {{usuario.email}}</div>
+ 
+      </div>      
+  <br>
+      <div class="row">
+          <div class="col-8"> <b>Nome/Nome Social:</b> {{usuario.nome}}</div>
+          <div class="col-4"> <b>Idade (maior ou igual a 18 anos):</b> {{usuario.idade}}</div>
+      </div>      
+  <br>			
+      <div class="row">
+          <div class="col-4"><b>Identidade (RG):</b> {{usuario.rg}}<br></div>
+          <div class="col-4"> <b>CPF:</b> {{usuario.cpf}} <br></div>
+          <div class="col-4"> <b>Data de Nascimento:</b> {{usuario.data_de_nasc}}<br></div>
+      </div> 
+  <br>
+      <div class="row">
+          <div class="col-4"><b>Estado Civil:</b> {{usuario.estado_civil}}<br></div> 
+          <div class="col-4"><b>Raça/Cor/Etnia:</b> {{usuario.raca}}<br></div> 
+          <div class="col-4"><b>Identidade de Gênero:</b> {{usuario.id_genero}}<br></div> 
+      </div> 
+  <br>
+  
+  <div class="row">
+      <div class="col-4"><b>CEP:</b> {{usuario.cep}}<br></div> 
+      <div class="col-4"><b>Bairro:</b> {{usuario.bairro}}<br></div> 
+      <div class="col-4"><b>Número da Casa:</b> {{usuario.n_casa}}<br></div> 
+  </div> 
+  
+  <br>
+      <div class="row">
+          <div class="col-4"><b>Telefone:</b> {{usuario.telefone}}<br></div> 
+          <div class="col-4"><b>Grau de Escolaridade:</b> {{usuario.escolaridade}}<br> </div> 
+          <div class="col-4"><b>Ocupação:</b> {{usuario.profissao}}<br> </div> 
+      </div> 
+  <br>
+  
+  <div class="row">
+      <div class="col"><b>Descrição da Demanda inicial / Queixa Apresentada</b>
+        <br>{{usuario.PSICO_demanda_inicial}}</div> 
+      <div class="col"><b>Observações</b>
+        <br>{{usuario.PSICO_observacoes}} </div> 
+  </div> 
+  <br>
+  
+      <div class="container" >
+        <b>TRANSCRIÇÃO DO ATENDIMENTO</b><br> {{usuario.PSICO_transcricao}} </div><br>
+  
+      <div class="row">
+          <div class="col-4"><b>Estagiário Responsável:</b> {{usuario.PSICO_estagiario_resp}}<br> </div> 
+          <div class="col-4"><b>Supervisor Responsável: </b>{{usuario.PSICO_supervisor_resp}}<br></div> 
+      </div> 
+  <br>
+  {% endfor %}
+</table>
+</div>
+
+{% endblock %}

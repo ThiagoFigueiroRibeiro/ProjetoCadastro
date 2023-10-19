@@ -27,6 +27,10 @@ Note que você deve fazer isso somente depois de instalar o Python, caso contrá
 
 # Changelog:
 
+19/10/2023 - Versão Beta 0002 publicada. Agora os campos de exibição das fichas está bem bonitinho. Após o cadastro da pessoa, aparece somente o cadastro dela.
+
+16/10/2023 - Versão Beta 0001 publicada. A página de cadastro de nutrição foi ajeitada. Agora ela está mais bonitinha. Foram criadas as páginas de cadastro adulto e infanto juvenil para Psicologia. Falta a de Educação Física e Fisioterapia.
+
 12/10/2023 - Versão Alpha 0007 publicada. Agora a página de nutrição está com os campos de cadastro "prontos", faltando apenas ajeitar o HTML pra o frontend ficar bonitinho. A base de dados está pronta pra receber dados dos campos da nutrição.
 
 05/10/2023 - Versão Alpha 0006 publicada. Todos os cursos já tem as suas próprias páginas e identidades visuais. Essa versão já está pronta pra exibição para os coordenadores dos cursos que vamos nos reunir. 

@@ -13,10 +13,10 @@
     new Chart(ctx, {
       type: 'bar',
       data: {
-        labels: ['Sem especialidade', 'Desportiva', 'Geriatria','Neuro', 'Traumato Ortopedia',],
+        labels: ['Fisioterapia', 'Educação Física', 'Nutrição','Psicologia',],
         datasets: [{
           label: 'Número de usuários',
-          data: [{{ result_se }}, {{ result_de }}, {{ result_ge }}, {{ result_ne }}, {{ result_to }}],
+          data: [{{ result_se }}, {{ result_de }}, {{ result_ge }}, {{ result_ne }}],
           borderWidth: 1
         }]
       },

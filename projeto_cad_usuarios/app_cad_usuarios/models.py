@@ -9,6 +9,7 @@ class Usuario(models.Model):
     bairro = models.TextField(null = True)
     n_casa = models.IntegerField(null = True)
     telefone = models.IntegerField(null = True)
+    email = models.TextField(null = True)
     profissao = models.TextField(null = True)
     especialidade = models.TextField(null = True)
     curso = models.TextField(null = True)
@@ -17,7 +18,15 @@ class Usuario(models.Model):
     altura = models.IntegerField(null = True)
     peso = models.IntegerField(null = True)
     imc = models.FloatField(null = True)
+    rg = models.IntegerField(null = True)
+    cpf = models.IntegerField(null = True)
+    estado_civil = models.TextField(null = True)
+    raca = models.TextField(null = True)
+    id_genero = models.TextField(null = True)
+    escolaridade = models.TextField(null = True)
+    data_atendimento = models.TextField(null = True)
     
+#NUTRIÇÃO
     NUTRI_data_avaliacao = models.TextField(null = True)
     NUTRI_objetivo_da_orientacao = models.TextField(null = True)
     NUTRI_patologia = models.TextField(null = True)
@@ -44,5 +53,26 @@ class Usuario(models.Model):
     NUTRI_idade_metab = models.TextField(null = True)
     NUTRI_gordura_visc = models.TextField(null = True)
 
-    
-    
+# PSICOLOGIA
+    PSICO_N_cadastro = models.IntegerField(null = True)
+    PSICO_demanda_inicial = models.TextField(null = True)
+    PSICO_observacoes = models.TextField(null = True)
+    PSICO_transcricao = models.TextField(null = True)
+    PSICO_estagiario_resp = models.TextField(null = True)
+    PSICO_supervisor_resp = models.TextField(null = True)
+
+    PSICO_escola = models.TextField(null = True)
+    PSICO_ano_escolar = models.TextField(null = True)
+
+    PSICO_resp_nome = models.TextField(null = True)
+    PSICO_resp_data_de_nasc = models.TextField(null = True)
+    PSICO_resp_idade = models.IntegerField(null = True)
+    PSICO_resp_rg = models.IntegerField(null = True)
+    PSICO_resp_cpf = models.IntegerField(null = True)
+    PSICO_resp_cep = models.TextField(null = True)
+    PSICO_resp_bairro = models.TextField(null = True)
+    PSICO_resp_n_casa = models.IntegerField(null = True)
+    PSICO_resp_telefone = models.IntegerField(null = True)
+    PSICO_resp_email = models.TextField(null = True)
+    PSICO_resp_parentesco = models.TextField(null = True)
+    PSICO_resp_profissao = models.TextField(null = True)

@@ -1,8 +1,9 @@
 {% extends 'usuarios/psico/base-psico.html' %}
 {% block conteudo %}
 
+
 <div style="text-align: text-justify;">
-    <h1>Resultado da Pesquisa</h1>
+    <h1>Usuários Infanto Juvenis Cadastrados</h1>
     <table class="table table-bordered table-striped">
         <tr>
             <th>id</th>
@@ -10,19 +11,19 @@
             <th>Data da Avaliação</th>
             <th>Nascimento</th>
 			<th>Idade</th>
-			<th>Telefone</th>
+
             <th>Exibir Ficha</th>
         </tr>
-        {% for usuario in usuarios_filter %}
+        {% for usuario in usuarios %}
         <tr>
             <td>{{usuario.id_usuario}}</td>
             <td>{{usuario.nome}}</td>
-            <td>{{usuario.NUTRI_data_avaliacao}}</td>
+            <td>{{usuario.data_atendimento}}</td>
             <td>{{usuario.data_de_nasc}}</td>
 			<td>{{usuario.idade}}</td>
-			<td>{{usuario.telefone}}</td>
+
             <td>
-                <form action ="{% url 'exibir_ficha_adulto_psico' %}" method="post">
+                <form action ="{% url 'exibir_ficha_juvenil_psico' %}" method="post">
                     {% csrf_token %}
                     <input type="hidden" id="hidden-input" name="hidden_data">
                               <div class="col">
@@ -45,7 +46,5 @@
     </table>
 </div>
 </form>
-
-</form> 
 
 {% endblock %}
